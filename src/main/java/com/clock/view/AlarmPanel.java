@@ -34,11 +34,11 @@ public class AlarmPanel extends JButton{
                 myPanel.add(hourTxt);
                 myPanel.add(m);
                 myPanel.add(minTxt);
-                int result =  JOptionPane.showConfirmDialog(null, myPanel);
+                int result =  JOptionPane.showConfirmDialog(null, myPanel,"Set alarm 24h format",JOptionPane.YES_NO_OPTION);
                 isAlarmSet = result == JOptionPane.YES_OPTION;
-                 int mi= minTxt.getText() != "" ? Integer.parseInt(minTxt.getText()) : min;
-                 int hh= hourTxt.getText() != "" ? Integer.parseInt(hourTxt.getText()) : hour;
                 if(isAlarmSet){
+                    int mi= minTxt.getText() != "" ? Integer.parseInt(minTxt.getText()) : min;
+                    int hh= hourTxt.getText() != "" ? Integer.parseInt(hourTxt.getText()) : hour;
                     Thread alarmT = new Thread(new Alarm(hh, mi, true));
                     alarmT.start();
                 }
