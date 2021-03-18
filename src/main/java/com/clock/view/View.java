@@ -56,6 +56,7 @@ public class View implements Observer {
         frame.setTitle("Java com.clock.Clock");
         frame.setPreferredSize(new Dimension(400,400));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
         frame.pack();
         frame.setVisible(true);
     }
